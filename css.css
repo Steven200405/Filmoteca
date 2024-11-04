@@ -1,0 +1,14 @@
+h1,footer{
+    text-align: center;
+}
+table{
+    border: 1px solid;
+    border-collapse: collapse;
+}
+img{
+    width: 150px;
+    height: auto;
+}
+td,th{
+    border:1px solid;
+}
