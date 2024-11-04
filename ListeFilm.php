@@ -7,6 +7,9 @@
 </head>
 
 <body>
+    <?php
+        include("login.php");
+    ?>
     <header>
         <nav>
             <ol>
@@ -18,24 +21,21 @@
                 <li><a href="Supprimer.php" class="lienMenu">Supprimer un film</a></li>
             </ol>
         </nav>
-        <h1>Ajouter un film</h1>
+        <h1>Liste des films</h1>
     </header>
     <section>
-        <form action ="" method="POST">
-            <label for="img">Image du film: </label>
-            <input type="file" id="file" name="file" accept="Img/png,Img/jpeg" required><br>
-            <label>Titre: </label>
-            <input type="text" id ="titre" name="titre" required><br>
-            <label>Date de sortie du film: </label>
-            <input type="date" id="dateF" name="dateF" required><br>
-            <label>Genre: </label>
-            <input type="text" id="genre" name="genre" required><br>
-            <label>Auteur: </label>
-            <input type="text" id="genre" name="genre" required><br>
-            <label>Notation: </label>
-            <input type="number" id="note" name="note" required><br>
-            <button>Ajouter</button>
-        </form>
+        <?php
+        $idcon = new mysqli($host, $user, $mdp, $bdd);
+        $sql = "SELECT * FROM movie";
+        $result = $idcon->query($sql);
+        echo "<table>";
+        echo "<tr><th>ID</th><th>Title</th><th>Year</th><th>Sypnosis</th><th>Director</th><th>Created_at</th><th>Delete_at</th><th>Genre</th></tr>";
+        while ($ligne = $result->fetch_object()) {
+            echo "<tr><td>" . $ligne->id . "</td><td>" . $ligne->title . "</td><td>" . $ligne->year . "</td><td>" . $ligne->sypnosis . "</td><td>" . $ligne->director . "</td><td>" . $ligne->created_at . "</td><td>" . $ligne->delete_at . "</td><td>" . $ligne->genre . "</td><tr>";
+        }
+        $idcon->close();
+        echo "</table>";
+        ?>
     </section>
     <footer>
         <p>2024-2025</p>
