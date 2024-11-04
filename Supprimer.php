@@ -8,10 +8,11 @@
         <header>
             <nav>
                 <ol>
-                    <li><a href="Projet1.html">Accueil</a></li>
-                    <li><a href="Ajouter.html">Ajouter un film</a></li>
-                    <li><a href="Modifier.html">Modifier un film</a></li>
-                    <li><a href="Supprimer.html">Supprimer un film</a></li>
+                    <li><a href="Projet1.html" class="lienMenu">Accueil</a></li>
+                    <li><a href="Lire.php" class="lienMenu">Lire tous les films</a></li>
+                    <li><a href="Ajouter.php" class="lienMenu">Ajouter un film</a></li>
+                    <li><a href="Modifier.php" class="lienMenu">Modifier un film</a></li>
+                    <li><a href="Supprimer.php" class="lienMenu">Supprimer un film</a></li>
                 </ol>
             </nav>
             <h1>Collection de films</h1>
