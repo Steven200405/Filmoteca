@@ -8,11 +8,19 @@
 
 <body>
     <header>
+        <nav>
+            <ol>
+                <li><a href="Projet1.html">Accueil</a></li>
+                <li><a href="Ajouter.html">Ajouter un film</a></li>
+                <li><a href="Modifier.html">Modifier un film</a></li>
+                <li><a href="Supprimer.html">Supprimer un film</a></li>
+            </ol>
+        </nav>
         <h1>Ajouter un film</h1>
     </header>
     <section>
         <form action ="" method="POST">
-            <label>Image du film: </label>
+            <label for="img">Image du film: </label>
             <input type="file" id="file" name="file" accept="Img/png,Img/jpeg" required><br>
             <label>Titre: </label>
             <input type="text" id ="titre" name="titre" required><br>
@@ -23,7 +31,8 @@
             <label>Auteur: </label>
             <input type="text" id="genre" name="genre" required><br>
             <label>Notation: </label>
-            <input type="number" id="note" name="note" required>
+            <input type="number" id="note" name="note" required><br>
+            <button>Ajouter</button>
         </form>
     </section>
     <footer>

@@ -23,3 +23,29 @@ td{
     height: 150px;
     width: 200px;
 }
+label{
+    font-weight: bold;
+}
+input{
+    margin:3px;
+}
+
+ol{
+    list-style-type: none;
+    padding:0px;
+    margin-top: 0;
+}
+
+li{
+    display: inline-block;
+}
+
+
+.lienMenu{
+    text-decoration: none;
+    color: black;
+    padding:15px;    
+}
+.lienMenu:hover{
+    background: gray;
+}
