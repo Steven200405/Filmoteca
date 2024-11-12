@@ -10,7 +10,7 @@
     <header>
         <nav>
             <ol>
-                <li><a href="Projet1.html" class="lienMenu">Accueil</a></li>
+                <li><a href="Projet1.php" class="lienMenu">Accueil</a></li>
                 <li><a href="ListeFilm.php" class="lienMenu">Liste des films</a></li>
                 <li><a href="Lire.php" class="lienMenu">Lire un films</a></li>
                 <li><a href="Ajouter.php" class="lienMenu">Ajouter un film</a></li>
@@ -22,20 +22,25 @@
     </header>
     <section>
         <form action ="" method="POST">
-            <label for="img">Image du film: </label>
-            <input type="file" id="file" name="file" accept="Img/png,Img/jpeg" required><br>
             <label>Titre: </label>
             <input type="text" id ="titre" name="titre" required><br>
-            <label>Date de sortie du film: </label>
-            <input type="date" id="dateF" name="dateF" required><br>
+            <label>Année de sortie du film: </label>
+            <input type="number" id="annee" name="annee" min = "0000" required><br>
+            <label>Sypnosis: </label>
+            <input type="text" id="sypnosis" name="sypnosis" required><br>
+            <label>Directeur: </label>
+            <input type="text" id="director" name="director" required><br>
             <label>Genre: </label>
             <input type="text" id="genre" name="genre" required><br>
-            <label>Auteur: </label>
-            <input type="text" id="genre" name="genre" required><br>
-            <label>Notation: </label>
-            <input type="number" id="note" name="note" required><br>
-            <button>Ajouter</button>
+            <button type="submit">Ajouter</button>
         </form>
+        <?php
+        if(isset($_POST["titre"])&&isset($_POST["annee"])&&isset($_POST["sypnosis"])&&isset($_POST["director"])&&isset($_POST["genre"])){
+            include("login.php")
+            $idcon = new mysqli($host, $user, $mdp, $bdd);
+            $sql = "INSERT INTO movie";
+            $result = $idcon->query($sql);        }  
+        ?>
     </section>
     <footer>
         <p>2024-2025</p>

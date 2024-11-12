@@ -10,7 +10,7 @@
     <header>
         <nav>
             <ol>
-                <li><a href="Projet1.html" class="lienMenu">Accueil</a></li>
+                <li><a href="Projet1.php" class="lienMenu">Accueil</a></li>
                 <li><a href="ListeFilm.php" class="lienMenu">Liste des films</a></li>
                 <li><a href="Lire.php" class="lienMenu">Lire un films</a></li>
                 <li><a href="Ajouter.php" class="lienMenu">Ajouter un film</a></li>
@@ -34,7 +34,7 @@
                     <th>Notation</th>
                 </tr>
                 <tr>
-                    <td><img src="/Img/Loup-Garou.jpg" alt="Loup-Garou img" /></td>
+                    <td><img src="./Image/Loup-Garou.jpg" alt="Loup-Garou img" /></td>
                     <td>Loups-Garous</td>
                     <td>23/10/2024</td>
                     <td>Aventure, Comédie, Fantastique</td>
@@ -42,7 +42,7 @@
                     <td>1,9/5</td>
                 </tr>
                 <tr>
-                    <td><img src="/Img/Proie-du-diable.jpg" alt="Loup-Garou img" /></td>
+                    <td><img src="./Image/Proie-du-diable.jpg" alt="La Proie du diable img" /></td>
                     <td>La Proie du diable</td>
                     <td>26/10/2022</td>
                     <td>Epouvante-horreur, Thriller</td>
@@ -50,7 +50,7 @@
                     <td>2,2/5</td>
                 </tr>
                 <tr>
-                    <td><img src="/Img/Forrest-Gump.jpg" alt="Loup-Garou img" /></td>
+                    <td><img src="./Image/Forrest-Gump.jpg" alt="Forrest-Gump img" /></td>
                     <td>Forrest Gump</td>
                     <td>05/10/1994</td>
                     <td>Comédie, Drame, Romance</td>
