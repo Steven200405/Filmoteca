@@ -1,13 +1,43 @@
 <?php
+
+declare(strict_types=1);
+
 namespace App\Controller;
 
-class FilmController{
-    private FilmModel $filmModel;
+use App\Repository\FilmRepository;
 
-    public function __construct(){
-        $this->filmModel = new FilmModel();
+class FilmController
+{
+    public function list()
+    {
+        $filmRepository = new FilmRepository();
+        $films = $filmRepository->findAll();
+
+        header('Content-Type: application/json');
+        echo json_encode($films);
     }
 
+    public function create()
+    {
+        echo "Création d'un film";
+    }
+
+    public function read()
+    {
+        echo "Lecture d'un film";
+    }
+
+    public function update()
+    {
+        echo "Mise à jour d'un film";
+    }
+
+    public function delete()
+    {
+        echo "Suppression d'un film";
+    }
+    
+    /*
     public function list(array $queryParams){
         $film = $this->filmModel->getAllFilms();
     }
@@ -49,5 +79,5 @@ class FilmController{
             echo "Id non trouvée, impossible de supprimer le film avec cet ID";
         }
     }
+    */
 }
-?>
