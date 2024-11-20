@@ -20,7 +20,9 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use App\Core\Router;
 
+
 $router = new Router();
+var_dump("toto");die;
 $router->route();
 
 ?>

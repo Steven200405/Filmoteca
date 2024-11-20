@@ -13,8 +13,22 @@ class FilmController
         $filmRepository = new FilmRepository();
         $films = $filmRepository->findAll();
 
-        header('Content-Type: application/json');
-        echo json_encode($films);
+        /*$filmEntities = [];
+        foreach($films as $film){
+            $filmEntity = new Film();
+            $filmEntity->setId($film['id']);
+            $filmEntity->setTitle($film['title']);
+            $filmEntity->setYear($film['year']);
+            $filmEntity->setType($film['type']);
+            $filmEntity->setSypnosis($film['sypnosis']);
+            $filmEntity->setDirector($film['director']);
+            $filmEntity->setCreatedAt(new \DataTime($film['created_at']));
+            $filmEntity->setDeletedAt(new \DataTime($film['deleted_at']));
+        }
+        dd($filmEntities);*/
+
+        /*header('Content-Type: application/json');
+        echo json_encode($films);*/
     }
 
     public function create()

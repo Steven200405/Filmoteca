@@ -12,5 +12,7 @@
             "name": "Steven HUANG"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "symfony/var-dumper": "^7.1"
+    }
 }

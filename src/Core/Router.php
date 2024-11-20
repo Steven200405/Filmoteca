@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Core;
 
@@ -41,7 +42,7 @@ class Router
             //Vérifie si la méthode existe dans le contrôleur 
             if(method_exists($controller,$action)){
                 $queryParams = $_GET; // Récupère les paramètres éventuels 
-                $controller->$action($queryParams); // Appelle la méthode dynamique 
+                $controller->$action($queryParams); // Appelle la méthode dynamique correspondant à l'action du contrôleur
             }else{
                 echo "Action '$action' not found in '$controllerName'";
             }

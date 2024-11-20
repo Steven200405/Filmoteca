@@ -4,7 +4,7 @@ namespace App\Core;
 
 class DataBaseConnection{
     private static ?\PDO $connection = null;
-    private const DB_HOST = '127.0.0.1';
+    private const DB_HOST = 'db'; // ou filmoteca_db    Name of the Docker container of the id
     private const DB_PORT = 3306;
     private const DB_NAME = 'filmoteca';
     private const DB_USER = 'filmoteca_user';
