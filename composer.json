@@ -1,17 +1,16 @@
 {
     "name": "filmoteca/filmoteca",
-    "description": "Filmoteca Project",
+    "description": "Filmoteca project",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Filmoteca\\Filmoteca\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Steven"
+            "name": "Steven HUANG"
         }
     ],
     "require": {}
-    
 }
