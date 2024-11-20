@@ -17,7 +17,7 @@ class Router
         $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
         
         // Découpe l'URI demandée sans le domaine et la racine
-        $parts = explode('/',uri);
+        $parts = explode('/',$uri);
         $route = $parts[0] ?? null;
         $action = $parts[1] ?? null;
 
@@ -51,12 +51,5 @@ class Router
                 //Page non trouvée
                 echo "404 Not Found";
             }
-
-            // Appelle une méthode spécifique avec les paramètres de la requête (par exemple, index())
-            $controller->index($queryParams); // On passe les paramètres à la méthode index()
-        } else {
-            // Page non trouvée
-            echo "404 Not Found";
-        }
     }
 }
