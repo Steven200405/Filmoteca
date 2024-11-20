@@ -27,4 +27,12 @@ class FilmRepository
         return $this->entityMapperService->mapToEntities($films, Film::class);
         //return $films;
     }
+
+    public function getFilm(int $id){
+        $query = 'SELECT * FROM film where id =$id';
+        $stmt = $this->db->query($query);
+        $film = $stmt->fetchAll();
+        dd($film);
+        return $film;
+    }
 }
