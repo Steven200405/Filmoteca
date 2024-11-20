@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Model;
+namespace App\Entity;
 
 class Film{
 
     private $id;
     private $title;
-    private $year;
-    private $genre;
-    private $sypnosis;
-    private $director;
-    private $deleted_at;
-    private $created_at;
-    private $updated_at;
+    private ?int $year;
+    private ?string $genre;
+    private ?string $sypnosis;
+    private ?string $director;
+    private \DateTime $deleted_at;
+    private \DateTime $created_at;
+    private \DateTime $updated_at;
 
-    public function __contruct(int $id, string $title, string $year, string $genre, string $sypnosis, string $director, string $deleted_at,string $created_at, string $updated_at ){
+    public function __contruct(int $id, string $title, int $year, string $genre, string $sypnosis, string $director, \DateTime $deleted_at,\DateTime $created_at, \DateTime $updated_at ){
         $this->id = $id;
         $this->title = $title;
         $this->year = $year;
@@ -33,7 +33,7 @@ class Film{
         return $this->title;
     }
 
-    public function getYear():string{
+    public function getYear():int{
         return $this->year;
     }
 
@@ -49,13 +49,13 @@ class Film{
         return $this->director;
     }
 
-    public function getDeleted_at():string{
+    public function getDeleted_at():\DateTime{
         return $this->deleted_at;
     }
-    public function getCreated_at():string{
+    public function getCreated_at():\DateTime{
         return $this->created_at;
     }
-    public function getUpdated_at():string{
+    public function getUpdated_at():\DateTime{
         return $this->updated_at;
     }
 
