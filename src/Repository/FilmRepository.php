@@ -2,17 +2,17 @@
 
 namespace App\Model;
 
-class FilmModel{
+class FilmRepository{
 
     private $dsn = 'mysql:dbname=film;host=127.0.0.1';
     private $user='filmoteca_user';
     private $password= 'filmoteca_password';
 
-    private $idcon = new PDO($dsn,$user,$password);
+    private $idcon = new \PDO($dsn,$user,$password);
 
-    public function addFilm(string $title, string $year, string $genre, string $sypnosis, string $director){
+    public function addFilm(string $title, string $year,string $type, string $genre, string $sypnosis, string $director){
         $dateCreate=date('Y-m-d H:i:s');
-        $dateDelete= new DateTime('0000-00-00 00:00:00');
+        $dateDelete= new \DateTime('0000-00-00 00:00:00');
         $dateUpdate=date('Y-m-d H:i:s');
 
         $sql = $this->idcon->prepare("INSERT INTO film(id,title,year,type,sypnosis,director,deleted_at,created_at,update_at) VALUES (:titre,:annee,:type,:sypnosis,:director,:dateD,:dateC,:dateU");

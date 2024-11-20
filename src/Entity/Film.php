@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class FilmEntity{
+class Film{
 
     public $id;
     public $title;
