@@ -10,24 +10,12 @@ class Film
     private string $title;
     private ?string $year = null;
     private string $type;
-    private ?string $genre=null;
+    private string $genre;
     private ?string $synopsis = null;
     private ?string $director = null;
     private ?\DateTime $deletedAt = null;
     private \DateTime $createdAt;
     private ?\DateTime $updatedAt = null;
-
-    public function __contruct(int $id, string $title, string $year, string $genre, string $sypnosis, string $director, \DateTime $deleted_at,\DateTime $created_at, \DateTime $updated_at ){
-        $this->id = $id;
-        $this->title = $title;
-        $this->year = $year;
-        $this->genre = $genre;
-        $this->sypnosis = $sypnosis;
-        $this->director = $director;
-        $this->deleted_at = $deleted_at;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-    }
 
     public function getId(): int
     {
@@ -39,6 +27,7 @@ class Film
         $this->id = $id;
         return $this;
     }
+
     public function getTitle(): string
     {
         return $this->title;
@@ -61,17 +50,6 @@ class Film
         return $this;
     }
 
-    public function getGenre(): string
-    {
-        return $this->genre;
-    }
-
-    public function setGenre(string $genre): self
-    {
-        $this->genre = $genre;
-        return $this;
-    }
-
     public function getType(): string
     {
         return $this->type;
@@ -80,6 +58,17 @@ class Film
     public function setType(string $type): self
     {
         $this->type = $type;
+        return $this;
+    }
+
+    public function getGenre():string
+    {
+        return $this->type;
+    }
+
+    public function setGenre(string $genre):self
+    {
+        $this->genre=$genre;
         return $this;
     }
 

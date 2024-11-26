@@ -29,6 +29,9 @@ class FilmController
 
         /*header('Content-Type: application/json');
         echo json_encode($films);*/
+
+        require __DIR__ . '/../views/listView.php';
+
     }
 
     public function create()
@@ -41,9 +44,8 @@ class FilmController
     {
         $filmRepository = new FilmRepository();
         $film = $filmRepository->getFilm((int)$params['id']);
-        dd($film);
 
-        echo "Lecture d'un film";
+        require __DIR__ . '/../views/readView.php';
     }
 
     public function update()
