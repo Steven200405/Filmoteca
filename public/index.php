@@ -19,14 +19,17 @@ if(isset($request)){
 require __DIR__ . '/../vendor/autoload.php';
 
 use App\Core\Router;
+
+
 $loader = new \Twig\Loader\FilesystemLoader(realpath(__DIR__ . './../templates'));
 $twig = new \Twig\Environment($loader);
 
 $router = new Router();
+$variable=$router->route();
 
+$data=['films'=>$variable];
 
-$data = ['films' => $router->route()];
-
-echo $twig->render('listView.php',$data);
+echo $twig->render('listView.html.twig',$data);
+echo $twig->render('readView.html.twig',$data);
 
 ?>
