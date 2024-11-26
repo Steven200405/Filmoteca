@@ -29,10 +29,11 @@ class FilmRepository
     }
 
     public function getFilm(int $id){
-        $query = 'SELECT * FROM film where id =$id';
-        $stmt = $this->db->query($query);
-        $film = $stmt->fetchAll();
-        dd($film);
-        return $film;
+        $query = 'SELECT * FROM film where id =:id';
+        $stmt = $this->db->prepare($query);
+        $stmt->execute(['id'=>$id]);
+
+        $film=$stmt->fetch();
+        return $this->entityMapperService->mapToEntity($film, Film::class);
     }
 }

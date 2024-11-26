@@ -40,7 +40,8 @@ class FilmController
     public function read(array $params)
     {
         $filmRepository = new FilmRepository();
-        $films = $filmRepository->getFilm((int)$params['id']);
+        $film = $filmRepository->getFilm((int)$params['id']);
+        dd($film);
 
         echo "Lecture d'un film";
     }
