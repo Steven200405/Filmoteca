@@ -24,15 +24,6 @@ $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../src/views');
 $twig = new \Twig\Environment($loader);
 
 $router = new Router();
-$variable=$router->route();
+$router->route();
 
-$data=['films'=>$variable];
-
-if(gettype($variable)=='array'){
-    echo $twig->render('listView.html.twig',$data);
-}
-else{
-    echo $twig->render('readView.html.twig',$data);
-
-}
 ?>

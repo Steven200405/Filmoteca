@@ -1,13 +1,16 @@
 <?php
-
 declare(strict_types=1);
 
 namespace App\Controller;
+require __DIR__ . '/../../vendor/autoload.php';
+
 
 use App\Repository\FilmRepository;
+use App\Core\TwigEnvironment;
 
-class FilmController
+class FilmController extends TwigEnvironment
 {
+
     public function list(array $params)
     {
         $filmRepository = new FilmRepository();
@@ -29,7 +32,7 @@ class FilmController
 
         /*header('Content-Type: application/json');
         echo json_encode($films);*/
-        return $films;
+        echo $this->twig->render('listView.html.twig',['films'=>$films]);
     }
 
     public function create()
@@ -43,7 +46,7 @@ class FilmController
         $filmRepository = new FilmRepository();
         $film = $filmRepository->getFilm((int)$params['id']);
 
-        return $film;
+        echo $this->twig->render('readView.html.twig',['film'=>$film]);
     }
 
     public function update()
