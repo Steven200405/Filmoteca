@@ -36,4 +36,9 @@ class FilmRepository
         $film=$stmt->fetch();
         return $this->entityMapperService->mapToEntity($film, Film::class);
     }
+
+    public function createFilm(Film $film){
+    
+    }
+
 }

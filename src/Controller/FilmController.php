@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Repository\FilmRepository;
 use App\Core\TwigEnvironment;
+use App\Entity\Film;
 
 class FilmController extends TwigEnvironment
 {
@@ -36,8 +37,29 @@ class FilmController extends TwigEnvironment
 
     public function create()
     {
+        if($_SERVER['REQUEST_METHOD']=='POST' && $_POST['titre'] && $_POST['type']){
+            $film = new Film();
+            $film->setTitle($_POST['titre']);
+            $film->setYear($_POST['annee']);
+            $film->setType($_POST['synopsis']);
+            $film->setDirector($_POST['director']);
+            $film->setCreatedAt((new \DateTime()));
+            $film->setUpdatedAt((new \DateTime()));
+            echo "test";
+            $filmRepository = new FilmRepository();
+            $result = $filmRepository->createFilm($film);
+        }
         
-        echo "Création d'un film";
+
+        echo $this->twig->render('create.html.twig');
+
+        if($film){
+            "Ajout réussi dans la base de données !";
+        }
+        else{
+            "L'ajout du film dans la base de données n'a pas abouti.";
+        }
+
     }
 
     public function read(array $params)

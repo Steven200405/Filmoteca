@@ -10,7 +10,6 @@ class Film
     private string $title;
     private ?string $year = null;
     private string $type;
-    private string $genre;
     private ?string $synopsis = null;
     private ?string $director = null;
     private ?\DateTime $deletedAt = null;
@@ -58,17 +57,6 @@ class Film
     public function setType(string $type): self
     {
         $this->type = $type;
-        return $this;
-    }
-
-    public function getGenre():string
-    {
-        return $this->type;
-    }
-
-    public function setGenre(string $genre):self
-    {
-        $this->genre=$genre;
         return $this;
     }
 

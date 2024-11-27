@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+{%block title%}Création d'un film{%endblock%}
+{%block main%}
+    <h2 class="">Renseignez les informations nécessaires: </h2>
+
+    <form action ="" method="POST">
+            <label>Titre: </label>
+            <input type="text" id ="titre" name="titre" required><br>
+            <label>Année de sortie du film: </label>
+            <input type="number" id="annee" name="annee" min = "0000"><br>
+            <label>Type: </label>
+            <input type="text" id="type" name="type" required><br>
+            <label>Sypnosis: </label>
+            <input type="text" id="synopsis" name="synopsis"><br>
+            <label>Directeur: </label>
+            <input type="text" id="director" name="director"><br>
+            <button type="Submit">Ajouter</button>
+    </form>
+
+{%endblock%}
