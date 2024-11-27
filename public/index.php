@@ -19,9 +19,9 @@ if(isset($request)){
 require __DIR__ . '/../vendor/autoload.php';
 
 use App\Core\Router;
-
-
-$loader = new \Twig\Loader\FilesystemLoader(realpath(__DIR__ . './../templates'));
+use Twig\Loader\FilesystemLoader;
+use Twig\Environment;
+$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../src/views');
 $twig = new \Twig\Environment($loader);
 
 $router = new Router();
@@ -29,7 +29,17 @@ $variable=$router->route();
 
 $data=['films'=>$variable];
 
-echo $twig->render('listView.html.twig',$data);
-echo $twig->render('readView.html.twig',$data);
+$count=0;
 
+foreach($variable as $film){
+    $count++;
+}
+
+if($count>0){
+    echo $twig->render('listView.html.twig',$data);
+}
+else{
+    echo $twig->render('readView.html.twig',$data);
+
+}
 ?>

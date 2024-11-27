@@ -18,29 +18,29 @@
             <th>year</th>
             <th>type</th>
             <th>genre</th>
-            <th>sypnosis</th>
+            <th>synopsis</th>
             <th>director</th>
-            <th>deleteAt</th>
+            <th>deletedAt</th>
             <th>createdAt</th>
-            <th>updateAt</th>
+            <th>updatedAt</th>
         </tr>
         <tr>
-            <td>{{ film.id }}</td>
-            <td>{{ film.title }}</td>
-            <td>{{ film.year }}</td>
-            <td>{{ film.type }}</td>
-            <td>{{ film.genre }}</td>
-            <td>{{ film.synopsis }}</td>
-            <td>{{ film.director }}</td>
+            <td>{{ films.id }}</td>
+            <td>{{ films.title }}</td>
+            <td>{{ films.year }}</td>
+            <td>{{ films.type }}</td>
+            <td>{{ films.genre }}</td>
+            <td>{{ films.synopsis }}</td>
+            <td>{{ films.director }}</td>
             <td>
-                {% if film.deletedAt %}
-                    {{ film.deletedAt|date("Y-m-d H:i:s") }}
+                {% if films.deletedAt %}
+                    {{ films.deletedAt|date("Y-m-d H:i:s") }}
                 {% else %}
                     null
                 {% endif %}
             </td>
-            <td>{{ film.createdAt|date("Y-m-d H:i:s") }}</td>
-            <td>{{ film.updatedAt|date("Y-m-d H:i:s") }}</td>
+            <td>{{ films.createdAt|date("Y-m-d H:i:s") }}</td>
+            <td>{{ films.updatedAt|date("Y-m-d H:i:s") }}</td>
         </tr>
     </table>
     </main>
