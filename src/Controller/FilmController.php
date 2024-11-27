@@ -45,20 +45,19 @@ class FilmController extends TwigEnvironment
             $film->setDirector($_POST['director']);
             $film->setCreatedAt((new \DateTime()));
             $film->setUpdatedAt((new \DateTime()));
-            echo "test";
             $filmRepository = new FilmRepository();
             $result = $filmRepository->createFilm($film);
+            if($result){
+                "Ajout réussi dans la base de données !";
+            }
+            else{
+                "L'ajout du film dans la base de données n'a pas abouti.";
+            }
         }
-        
 
         echo $this->twig->render('create.html.twig');
 
-        if($film){
-            "Ajout réussi dans la base de données !";
-        }
-        else{
-            "L'ajout du film dans la base de données n'a pas abouti.";
-        }
+        
 
     }
 
